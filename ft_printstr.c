@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_printstr.c                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/03 10:44:57 by spenning      #+#    #+#                 */
-/*   Updated: 2023/12/21 15:07:16 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/03 10:44:57 by spenning          #+#    #+#             */
+/*   Updated: 2024/01/28 21:37:38 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int	ft_printstr(va_list args)
 	str = va_arg(args, char *);
 	rtr = 0;
 	if (str == NULL)
-		rtr = ft_putstr_fd("(null)", 1);
+		rtr = putstr_fd("(null)", 1);
 	else
 	{
 		while (*str)
 		{
-			rtr += ft_putchar_fd(str[0], 1);
+			rtr += putchar_fd(str[0], 1);
 			str++;
 		}
 	}

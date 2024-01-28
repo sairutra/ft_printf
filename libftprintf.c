@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   libftprintf.c                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/03 10:45:10 by spenning      #+#    #+#                 */
-/*   Updated: 2023/12/21 15:07:02 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   libftprintf.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/03 10:45:10 by spenning          #+#    #+#             */
+/*   Updated: 2024/01/28 21:34:33 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			rtr += ft_putchar_fd(format[0], 1);
+			rtr += putchar_fd(format[0], 1);
 			format++;
 		}
 	}

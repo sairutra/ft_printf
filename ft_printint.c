@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_printint.c                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/03 10:44:37 by spenning      #+#    #+#                 */
-/*   Updated: 2024/01/23 14:27:49 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_printint.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/03 10:44:37 by spenning          #+#    #+#             */
+/*   Updated: 2024/01/28 21:33:53 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_printint(va_list args)
 
 	arg = va_arg(args, int);
 	rtr = 0;
-	rtr = ft_putnbr_fd(arg, 1);
+	rtr = putnbr_fd(arg, 1);
 	return (rtr);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_hexconvertptr.c                                 :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/03 10:43:41 by spenning      #+#    #+#                 */
-/*   Updated: 2023/12/21 15:07:40 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_hexconvertptr.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/03 10:43:41 by spenning          #+#    #+#             */
+/*   Updated: 2024/01/28 21:37:55 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_hexconvertptr(long unsigned int arg)
 			rem_int += 55;
 		else
 			rem_int += 48;
-		rtr += ft_putchar_fd(ft_tolower(rem_int), 1);
+		rtr += putchar_fd(tolower(rem_int), 1);
 	}
 	return (rtr);
 }

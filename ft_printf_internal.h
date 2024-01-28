@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_printf_internal.h                               :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/10/21 23:03:23 by spenning      #+#    #+#                 */
-/*   Updated: 2024/01/23 15:25:37 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_internal.h                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/21 23:03:23 by spenning          #+#    #+#             */
+/*   Updated: 2024/01/28 21:42:58 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@
 // unistd library. and va_list from the stdarg.h library. and the libft library
 
 # include <stdarg.h>
-# include "../libft.h"
+# include <stdio.h>
+# include <unistd.h>
 
 // This function aids ft_printf by printing all variables
 // which are passed with the %c formatter. The %c formatter is meant
@@ -64,5 +65,11 @@ int		ft_printptr(va_list args);
 // value to hexidecimal and will then print the hexidecimal lowercase. This 
 // function is similar such as ft_hexconvert
 int		ft_hexconvertptr(long unsigned int arg);
+int		putchar_fd(char c, int fd);
+int		putstr_fd(char *s, int fd);
+int		putnbr_fd(int d, int fd);
+int		tolower(int c);
+int		toupper(int c);
+size_t		strlen(const char *s);
 
 #endif

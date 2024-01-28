@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_printuint.c                                     :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/03 10:45:03 by spenning      #+#    #+#                 */
-/*   Updated: 2023/12/21 15:07:15 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_printuint.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/03 10:45:03 by spenning          #+#    #+#             */
+/*   Updated: 2024/01/28 21:34:25 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ static int	printunit(unsigned int arg)
 
 	rtr = 0;
 	if (arg == 0)
-		rtr += ft_putchar_fd('0', 1);
+		rtr += putchar_fd('0', 1);
 	if (arg > 0)
 	{
 		if (arg > 9)
 			rtr += printunit(arg / 10);
-		rtr += ft_putchar_fd(48 + (arg % 10), 1);
+		rtr += putchar_fd(48 + (arg % 10), 1);
 	}
 	return (rtr);
 }
