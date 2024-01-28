@@ -6,7 +6,7 @@
 /*   By: spenning <spenning@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/21 23:03:23 by spenning      #+#    #+#                 */
-/*   Updated: 2023/12/21 15:32:32 by spenning      ########   odam.nl         */
+/*   Updated: 2024/01/23 15:25:37 by spenning      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@
 // unistd library. and va_list from the stdarg.h library. and the libft library
 
 # include <stdarg.h>
-# include <unistd.h>
-# include "libft/libft.h"
+# include "../libft.h"
 
 // This function aids ft_printf by printing all variables
 // which are passed with the %c formatter. The %c formatter is meant
