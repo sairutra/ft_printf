@@ -36,17 +36,23 @@ int compareFile(FILE * fPtr1, FILE * fPtr2, int * line, int * col)
 
 int compare_length(int test_count, int ft_outcome, int outcome)
 {
+    FILE 	*errorLog;
+    errorLog = fopen("logs/error_log.txt", "a");
+    if (errorLog == NULL)
+    {
+        printf("Error opening log file\n");
+        return 1;
+    }
 	if(ft_outcome != outcome)
 	{
-	printf("Length is not equal. Check error_log.txt\n");
-	freopen("error_log.txt", "a+", stdout);
-	printf("Length error\n");
-	printf("test: %d\n", test_count);
-	printf("ft_print len: %d\n", ft_outcome);
-	printf("print len: %d\n", outcome);
-	printf("---------\n");
-	freopen("/dev/tty", "w", stdout);
+        printf(RED "Length is not equal. Check error_log.txt\n" RESET);
+        fprintf(errorLog,"Length error\n");
+        fprintf(errorLog,"test: %d\n", test_count);
+        fprintf(errorLog,"ft_print len: %d\n", ft_outcome);
+        fprintf(errorLog,"print len: %d\n", outcome);
+        fprintf(errorLog,"---------\n");
 	}
+    fclose(errorLog);
 	return(ft_outcome - outcome);
 }
 
@@ -57,8 +63,15 @@ int compare_files(int test_count)
 	char s;
 	FILE * fPtr1; 
     FILE * fPtr2;
+	FILE 	*errorLog;
 	fPtr1 = fopen("ft_temp.txt", "r");
     fPtr2 = fopen("temp.txt", "r");
+    errorLog = fopen("logs/error_log.txt", "a");
+    if (errorLog == NULL)
+    {
+        printf("Error opening log file\n");
+        return 1;
+    }
 	s = '0';
 
     /* fopen() return NULL if unable to open file in given mode. */
@@ -76,29 +89,27 @@ int compare_files(int test_count)
 	rewind(fPtr2);
     if (diff != 0)
     {
-        printf("Files are not equal. Check error_log.txt\n");
-		freopen("error_log.txt", "a+", stdout);
-		printf("---------\n");
-		printf("File not equal error\n");
-		printf("test: %d\n", test_count);
-        printf("Line: %d, col: %d\n", line, col);
-		printf("ft_printf\n");
+        printf(RED "Files are not equal. Check error_log.txt\n" RESET);
+		fprintf(errorLog,"---------\n");
+		fprintf(errorLog,"File not equal error\n");
+		fprintf(errorLog,"test: %d\n", test_count);
+        fprintf(errorLog,"Line: %d, col: %d\n", line, col);
+		fprintf(errorLog,"ft_printf\n");
 		while((s=fgetc(fPtr1))!=EOF) 
 		{
-      		printf("%c",s);
+      		fprintf(errorLog,"%c",s);
    		}
 		printf("\nprintf\n");
 		while((s=fgetc(fPtr2))!=EOF) 
 		{
-      		printf("%c",s);
+      		fprintf(errorLog,"%c",s);
    		}
-		printf("\n");
-		printf("---------\n");
-		freopen("/dev/tty", "w", stdout);
+		fprintf(errorLog,"\n");
+		fprintf(errorLog,"---------\n");
     }
     /* Finally close files to release resources */
     fclose(fPtr1);
     fclose(fPtr2);
-
+	fclose(errorLog);
     return 0;
 }

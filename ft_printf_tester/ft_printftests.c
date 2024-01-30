@@ -6,7 +6,7 @@
 /*   By: spenning <spenning@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/12/19 12:54:09 by spenning      #+#    #+#                 */
-/*   Updated: 2023/12/21 18:00:20 by spenning      ########   odam.nl         */
+/*   Updated: 2024/01/30 15:20:37 by spenning      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 int main ()
 {
+	fclose(fopen("logs/error_log.txt", "w"));
 	category_c();
+	category_s();
+	category_p();
+	category_d();
+	category_i();
+	category_u();
+	category_x();
+	category_X();
 }

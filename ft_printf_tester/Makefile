@@ -5,7 +5,8 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = ft_printf_c.c ft_printftests_utils.c ft_printftests.c 
+SRCS = ft_printf_tests.c ft_printftests_utils.c \
+		ft_printf_welcome.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -16,6 +17,9 @@ NAME = ft_printftests.a
 all: exe
 
 exe: $(NAME)
+	cc -Wall -Werror -Wextra ft_printf_welcome.c -o welcome && ./welcome 
+	rm welcome
+	mkdir -p logs
 	cc -Wall -Werror -Wextra ft_printftests.c ft_printftests.a && ./a.out
 	rm a.out
 	@$(MAKE) -s -C $(LIB_DIR) fclean
@@ -32,6 +36,7 @@ $(LIB_DIR)/$(LIB_ARC):
 
 clean:
 	@$(MAKE) -s -C $(LIB_DIR) clean
+	rm -rf logs
 	rm -f $(OBJS)
 
 fclean: clean
