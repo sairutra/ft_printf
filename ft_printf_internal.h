@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf_internal.h                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 23:03:23 by spenning          #+#    #+#             */
-/*   Updated: 2024/01/28 21:42:58 by mynodeus         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_printf_internal.h                               :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: spenning <spenning@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/10/21 23:03:23 by spenning      #+#    #+#                 */
+/*   Updated: 2024/01/30 15:32:29 by spenning      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ int		putstr_fd(char *s, int fd);
 int		putnbr_fd(int d, int fd);
 int		tolower(int c);
 int		toupper(int c);
-size_t		strlen(const char *s);
+size_t	strlen(const char *s);
 
 #endif

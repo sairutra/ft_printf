@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 18:10:24 by spenning          #+#    #+#             */
-/*   Updated: 2024/01/28 21:42:42 by mynodeus         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_printf_utils.c                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: spenning <spenning@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/10/12 18:10:24 by spenning      #+#    #+#                 */
+/*   Updated: 2024/01/30 15:30:34 by spenning      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_internal.h"
 
-
 int	putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 	return (1);
-	}
+}
 
 int	putstr_fd(char *s, int fd)
 {
@@ -71,23 +70,4 @@ int	toupper(int c)
 	if (c >= 97 && c <= 122)
 		c -= 32;
 	return (c);
-}
-
-size_t	strlen(const char *s)
-{
-	size_t	index;
-
-	index = 0;
-	if (s[index] == '\0')
-	{
-		return (0);
-	}
-	else
-	{
-		while (s[index] != '\0')
-		{
-			index++;
-		}
-		return (index);
-	}
 }
