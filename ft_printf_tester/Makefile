@@ -16,10 +16,18 @@ NAME = ft_printftests.a
 
 all: exe
 
-exe: $(NAME)
+exe: $(NAME) welcome logs tests
+
+exe_without_welcome: $(NAME) logs tests
+
+welcome:
 	cc -Wall -Werror -Wextra ft_printf_welcome.c -o welcome && ./welcome 
 	rm welcome
+
+logs:
 	mkdir -p logs
+
+tests:
 	cc -Wall -Werror -Wextra ft_printftests.c ft_printftests.a && ./a.out
 	rm a.out
 	@$(MAKE) -s -C $(LIB_DIR) fclean
