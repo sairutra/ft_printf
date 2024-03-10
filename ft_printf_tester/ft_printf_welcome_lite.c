@@ -3,7 +3,7 @@
 
 void welcome_lite()
 {
-	printf(YEL "ft_printf\n" RESET);
+	printf(YEL "\nft_printf\n" RESET);
 }
 
 int main()
