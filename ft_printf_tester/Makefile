@@ -20,6 +20,12 @@ exe: $(NAME) welcome logs tests
 
 exe_without_welcome: $(NAME) logs tests
 
+exe_welcome_lite: $(NAME) welcome_lite logs tests
+
+welcome_lite:
+	cc -Wall -Werror -Wextra ft_printf_welcome_lite.c -o welcome_lite && ./welcome_lite 
+	rm welcome_lite
+
 welcome:
 	cc -Wall -Werror -Wextra ft_printf_welcome.c -o welcome && ./welcome 
 	rm welcome
