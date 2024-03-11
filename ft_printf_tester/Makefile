@@ -1,3 +1,5 @@
+include ../sources.mk
+
 LIB_DIR := ../
 LIB_ARC := libftprintf.a
 
@@ -12,15 +14,17 @@ OBJS = $(SRCS:.c=.o)
 
 NAME = ft_printftests.a
 
+NORMINETTE = norminette_tester/norminette.c
+
 .SILENT:
 
 all: exe
 
-exe: $(NAME) welcome logs tests
+exe: $(NAME) welcome logs norminette tests
 
-exe_without_welcome: $(NAME) logs tests
+exe_without_welcome: $(NAME) logs norminette tests
 
-exe_welcome_lite: $(NAME) welcome_lite logs tests
+exe_welcome_lite: $(NAME) welcome_lite norminette logs tests
 
 welcome_lite:
 	cc -Wall -Werror -Wextra ft_printf_welcome_lite.c -o welcome_lite && ./welcome_lite 
@@ -32,6 +36,10 @@ welcome:
 
 logs:
 	mkdir -p logs
+
+norminette: 
+	cc -Wall -Werror -Wextra $(NORMINETTE) && ./a.out $(SOURCES)
+	rm a.out
 
 tests:
 	cc -Wall -Werror -Wextra ft_printftests.c ft_printftests.a && ./a.out

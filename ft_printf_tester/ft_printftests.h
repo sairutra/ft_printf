@@ -19,6 +19,10 @@
 # include <stdio.h>
 # include "../ft_printf.h"
 
+# define NORMFOLDER "../../ft_printf"
+# define NORMLOGS "logs/norminette_output.txt"
+# define NORMLOCLOGS "logs/norminette_location.txt"
+
 # define RED   "\x1B[31m"
 # define GRN   "\x1B[1;32m"
 # define YEL   "\x1B[33m"
