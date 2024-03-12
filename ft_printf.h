@@ -25,7 +25,16 @@
 # include <stdarg.h>
 
 // This function prints out the format string + variables 
-// depending on which format specifiers are given 
+// depending on which format specifiers are given. For example:
+// ft_printf("Hello %s", s1);
+// accepted formatters:
+// %s	=	char*
+// %d	=	int
+// %i	=	int
+// %p	=	void*
+// %u	=	unsigned int
+// %x	=	int
+// %X	=	int 
 int		ft_printf(const char *format, ...);
 
 #endif

@@ -65,11 +65,21 @@ int		ft_printptr(va_list args);
 // value to hexidecimal and will then print the hexidecimal lowercase. This 
 // function is similar such as ft_hexconvert
 int		ft_hexconvertptr(long unsigned int arg);
+// This function takes c and puts this c in fd file descriptor.
 int		putchar_fd(char c, int fd);
+// This function takes char *s and puts this string in fd file descriptor.
 int		putstr_fd(char *s, int fd);
+// This function takes d and puts this integer value as a string in fd file descriptor.
 int		putnbr_fd(int d, int fd);
+// This function takes input and converts input to uppercase equivalent if input was lowercase.
+// Function returns conversion.
 int		tolower(int c);
+// This function takes input and converts input to lowercase equivalent if input was uppercase.
+// Function returns conversion.
 int		toupper(int c);
+// This function takes pointer char *s, and expects a null terminated string.
+// then returns the length of the string.
 size_t	strlen(const char *s);
+
 
 #endif
