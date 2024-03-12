@@ -119,12 +119,12 @@ To get a local copy up and running follow these simple example steps.
 
 
 # Installation
-1. Clone the repo
+1. Clone the repo with --recursive flag, which is necessary for the tester
 
 
 ```sh
 
-git clone https://github.com/sebastianpenning/ft_printf.git
+git clone https://github.com/sebastianpenning/ft_printf.git --recursive
 
 ```
 2. cd into directory
@@ -135,15 +135,69 @@ cd ft_printf
 
 ```
 
+
+3. Call the Makefile 
+
+```sh
+
+make
+
+```
+
+4. Copy libftprintf.a and ft_printf.h files over to working directory
+
+```sh
+
+cp {location} ft_printf.h {working directory}
+cp {location} libftprintf.a {working directory}
+
+```
+
+<a href="https://github.com/sebastianpenning/ft_printf">
+  <img src="images/cpy_files.png" alt="cpy_files" width="1100" height="130">
+</a>
+
 <!-- USAGE EXAMPLES -->
 
 # Usage
+
+1. Include libft.h file and libft function in project.
+
+<a href="https://github.com/sebastianpenning/ft_printf">
+  <img src="images/include_files.png" alt="include_files" width="800" height="175">
+</a>
+
+
+2. Compile with cc
+
+```sh
+cc -Wall -Werror -Wextra {project_files.c} libftprintf.a && ./a.out
+```
+
+<a href="https://github.com/sebastianpenning/ft_printf">
+  <img src="images/compile_printf.png" alt="compile_printf" width="1100" height="100">
+</a>
+
 
 
 # Tester
 
 
-<!-- ROADMAP -->
+The libft tester includes tests for libft, printf, and get_next_line with both unit tests and norminette
+tests for all files included. In the future memory tests are planned to be added.
+
+1. cd into ft_printf_testser
+
+<a href="https://github.com/sebastianpenning/libft">
+  <img src="images/tester_1.png" alt="tester_1" width="900" height="150">
+</a>
+
+2. Make tests
+
+<a href="https://github.com/sebastianpenning/libft">
+  <img src="images/tester_2.png" alt="tester_2" width="900" height="700">
+</a>
+
 
 # Roadmap
 
