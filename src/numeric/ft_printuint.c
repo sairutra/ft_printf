@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "ft_printf_internal.h"
+#include "../../inc/ft_printf.h"
+#include "../../inc/ft_printf_internal.h"
 
 // This function converts the value passed from ft_printunit
 // recursively and then writes out the value with ft_putchar_fd

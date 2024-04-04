@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_internal.h"
+#include "../../inc/ft_printf_internal.h"
 
 size_t	strlen(const char *s)
 {

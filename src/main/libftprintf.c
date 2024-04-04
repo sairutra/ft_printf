@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "ft_printf_internal.h"
+#include "../../inc/ft_printf.h"
+#include "../../inc/ft_printf_internal.h"
 
 // This function will check the datatype that is passed from printf
 // if this datatype matches one of datatypes that this printf can print it will

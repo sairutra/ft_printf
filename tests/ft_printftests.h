@@ -17,7 +17,7 @@
 // unistd library. and malloc and free from the stdlib library.
 
 # include <stdio.h>
-# include "../ft_printf.h"
+# include "../inc/ft_printf.h"
 
 # define NORMFOLDER "../../ft_printf"
 # define NORMLOGS "logs/norminette_output.txt"

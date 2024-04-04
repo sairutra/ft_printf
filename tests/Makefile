@@ -1,6 +1,4 @@
-include ../sources.mk
-
-LIB_DIR := ../
+LIB_DIR := ../../ft_printf/
 LIB_ARC := libftprintf.a
 
 CC = cc
@@ -15,6 +13,10 @@ OBJS = $(SRCS:.c=.o)
 NAME = ft_printftests.a
 
 NORMINETTE = norminette_tester/norminette.c
+
+SRCDIR = ../src
+
+SOURCES     := $(shell find $(SRCDIR) -type f -name "*.c")
 
 .SILENT:
 
@@ -42,16 +44,15 @@ norminette:
 	rm a.out
 
 tests:
-	cc -Wall -Werror -Wextra ft_printftests.c ft_printftests.a && ./a.out
+	cc -Wall -Werror -Wextra ft_printftests.c ft_printftests.a ../lib/libftprintf.a && ./a.out
 	rm a.out
 	@$(MAKE) -s -C $(LIB_DIR) fclean
 
-$(NAME): $(LIB_DIR)/$(LIB_ARC) $(OBJS) 
+$(NAME): $(LIB_DIR)/$(LIB_ARC) $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 $(LIB_DIR)/$(LIB_ARC): 
 	@$(MAKE) -s -C $(LIB_DIR) all
-	cp $(LIB_DIR)/$(LIB_ARC) $(NAME)
 	
  %.o: %.c
 	$(CC) $(CFLAGS) -c $<  -o $@

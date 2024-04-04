@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "ft_printf_internal.h"
+#include "../../inc/ft_printf.h"
+#include "../../inc/ft_printf_internal.h"
 
 // This function takes the value from va_list and then uses
 // write to output the char 

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "ft_printf_internal.h"
+#include "../../inc/ft_printf.h"
+#include "../../inc/ft_printf_internal.h"
 
 // this function retrieves the value from va_list
 // then it will put the two's complement before

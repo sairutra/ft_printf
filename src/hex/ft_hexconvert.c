@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "ft_printf_internal.h"
+#include "../../inc/ft_printf.h"
+#include "../../inc/ft_printf_internal.h"
 
 // This functions retrieves the arg value from ft_printhex
 // does the conversion and then based on the specifier passed
