@@ -44,7 +44,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/sebastianpenning/ft_printf">
-    <img src="images/logo.png" alt="Logo" width="150" height="150">
+    <img src="resources/images/logo.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">ft_printf</h3>
@@ -154,7 +154,7 @@ cp {location} libftprintf.a {working directory}
 ```
 
 <a href="https://github.com/sebastianpenning/ft_printf">
-  <img src="images/cpy_files.png" alt="cpy_files" width="1100" height="130">
+  <img src="resources/images/cpy_files.png" alt="cpy_files" width="1100" height="130">
 </a>
 
 <!-- USAGE EXAMPLES -->
@@ -164,7 +164,7 @@ cp {location} libftprintf.a {working directory}
 1. Include libft.h file and libft function in project.
 
 <a href="https://github.com/sebastianpenning/ft_printf">
-  <img src="images/include_files.png" alt="include_files" width="800" height="175">
+  <img src="resources/images/include_files.png" alt="include_files" width="800" height="175">
 </a>
 
 
@@ -175,7 +175,7 @@ cc -Wall -Werror -Wextra {project_files.c} libftprintf.a && ./a.out
 ```
 
 <a href="https://github.com/sebastianpenning/ft_printf">
-  <img src="images/compile_printf.png" alt="compile_printf" width="1100" height="100">
+  <img src="resources/images/compile_printf.png" alt="compile_printf" width="1100" height="100">
 </a>
 
 
@@ -189,13 +189,13 @@ tests for all files included. In the future memory tests are planned to be added
 1. cd into ft_printf_testser
 
 <a href="https://github.com/sebastianpenning/libft">
-  <img src="images/tester_1.png" alt="tester_1" width="900" height="150">
+  <img src="resources/images/tester_1.png" alt="tester_1" width="900" height="150">
 </a>
 
 2. Make tests
 
 <a href="https://github.com/sebastianpenning/libft">
-  <img src="images/tester_2.png" alt="tester_2" width="900" height="700">
+  <img src="resources/images/tester_2.png" alt="tester_2" width="900" height="700">
 </a>
 
 
@@ -226,7 +226,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p  align="right">(<a  href="#readme-top">back to top</a>)</p>
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
+<!-- MARKDOWN LINKS & resources/IMAGES -->
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
