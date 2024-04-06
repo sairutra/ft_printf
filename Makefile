@@ -1,3 +1,4 @@
+
 #Compiler and Linker
 CC          := cc
 
@@ -21,7 +22,6 @@ CFLAGS      := -Wall -Werror -Wextra
 #---------------------------------------------------------------------------------
 SOURCES     := $(shell find $(SRCDIR) -type f -name "*.$(SRCEXT)")
 OBJECTS     := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
-OBJS        := $(shell find $(BUILDDIR) -type f -name "*.$(OBJEXT)")
 
 #Default Make
 all: directories $(TARGET)
@@ -44,13 +44,13 @@ fclean: clean
 
 #Link
 $(TARGET): $(OBJECTS)
-	@ar rcs $(TARGET) $(OBJS)
+	@ar rcs $(TARGET) $(OBJECTS)
 	 mv $(TARGET) $(TARGETDIR)/
 
 #Compile
 $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c $< -o $@
 
 #Non-File Targets
 .PHONY: all re clean fclean 

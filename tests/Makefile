@@ -1,4 +1,4 @@
-LIB_DIR := ../../ft_printf/
+LIB_DIR := ../../ft_printf
 LIB_ARC := libftprintf.a
 
 CC = cc
@@ -44,7 +44,7 @@ norminette:
 	rm a.out
 
 tests:
-	cc -Wall -Werror -Wextra ft_printftests.c ft_printftests.a ../lib/libftprintf.a && ./a.out
+	cc -Wall -Werror -Wextra ft_printftests.c ft_printftests.a $(LIB_DIR)/lib/$(LIB_ARC) && ./a.out
 	rm a.out
 	@$(MAKE) -s -C $(LIB_DIR) fclean
 
@@ -65,5 +65,6 @@ clean:
 fclean: clean
 	@$(MAKE) -s -C $(LIB_DIR) fclean
 	rm -f $(NAME)
+	rm -rf *.txt
 
 re: fclean all
