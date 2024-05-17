@@ -1,3 +1,4 @@
+include sources.mk
 
 #Compiler and Linker
 CC          := cc
@@ -20,7 +21,6 @@ CFLAGS      := -Wall -Werror -Wextra
 #---------------------------------------------------------------------------------
 #DO NOT EDIT BELOW THIS LINE
 #---------------------------------------------------------------------------------
-SOURCES     := $(shell find $(SRCDIR) -type f -name "*.$(SRCEXT)")
 OBJECTS     := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
 
 #Default Make
