@@ -14,7 +14,10 @@ OBJS = $(SRCS:.c=.o)
 
 NAME = ft_printftests.a
 
-NORMINETTE = norminette_tester/norminette.c
+NORMINETTE = norminette_tester.sh
+NORMDIR    = -d ../../src
+NORM_NO_PR = -npi
+
 
 SRCDIR = ../src
 
@@ -42,8 +45,7 @@ logs:
 	mkdir -p logs
 
 norminette: 
-	cc -Wall -Werror -Wextra $(NORMINETTE) && ./a.out $(SOURCES)
-	rm a.out
+	cd norminette_tester && bash $(NORMINETTE) $(NORMDIR)
 
 tests:
 	cc -Wall -Werror -Wextra ft_printftests.c ft_printftests.a $(LIB_DIR)/lib/$(LIB_ARC) && ./a.out

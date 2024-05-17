@@ -6,7 +6,7 @@
 /*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 07:59:26 by mynodeus          #+#    #+#             */
-/*   Updated: 2024/05/17 08:11:25 by mynodeus         ###   ########.fr       */
+/*   Updated: 2024/05/17 19:13:56 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	category_s(void)
 	int	tc;
 
 	tc = 1;
-	printf(BMAG "%%s\n" RESET);
+	printf(BMAG "\n%%s\n" RESET);
 	tc = test_util(tc, "lol %s", "lololol");
 	tc = test_util(tc, "lol %s", "\200");
 	tc = test_util(tc, "%s", "");
