@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_printftests.h                                   :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/10/21 23:03:23 by spenning      #+#    #+#                 */
-/*   Updated: 2024/01/30 15:02:35 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_printftests.h                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/21 23:03:23 by spenning          #+#    #+#             */
+/*   Updated: 2024/05/17 07:11:27 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,15 @@
 # define WHT   "\x1B[37m"
 # define RESET "\x1B[0m"
 
-int compareFile(FILE * fPtr1, FILE * fPtr2, int * line, int * col);
-int compare_length(int test_count, int ft_outcome, int outcome);
-int compare_files(int test_count);
-void category_c();
-void category_s();
-void category_p();
-void category_d();
-void category_i();
-void category_u();
-void category_x();
-void category_X();
-
-
+int		compareFile(FILE *fPtr1, FILE *fPtr2, int *line, int *col);
+int		compare_length(int test_count, int ft_outcome, int outcome);
+int		compare_files(int test_count);
+void	category_c(void);
+void	category_s(void);
+void	category_p(void);
+void	category_d(void);
+void	category_i(void);
+void	category_u(void);
+void	category_x(void);
+void	category_X(void);
 #endif
