@@ -6,3 +6,4 @@ libft
 libft/libft.h
 *.o
 *.a
+*.txt

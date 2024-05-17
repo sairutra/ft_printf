@@ -1,115 +1,94 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printftests_utils.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/17 07:11:57 by mynodeus          #+#    #+#             */
+/*   Updated: 2024/05/17 07:23:03 by mynodeus         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printftests.h"
 
-int compareFile(FILE * fPtr1, FILE * fPtr2, int * line, int * col)
+int	log_int(int test_count, FILE *errorlog, int result_org, int result_ft)
 {
-    char ch1, ch2;
-
-    *line = 1;
-    *col  = 0;
-
-    do
-    {
-        // Input character from both files
-        ch1 = fgetc(fPtr1);
-        ch2 = fgetc(fPtr2);
-        
-        // Increment line 
-        if (ch1 == '\n')
-        {
-            *line += 1;
-            *col = 0;
-        }
-
-        // If characters are not same then return -1
-        if (ch1 != ch2)
-            return -1;
-
-        *col  += 1;
-
-    } while (ch1 != EOF && ch2 != EOF);
-    /* If both files have reached end */
-    if (ch1 == EOF && ch2 == EOF)
-        return 0;
-    else
-        return -1;
+	printf(RED "%d FAIL "RESET, test_count);
+	fprintf(errorlog, "error\n");
+	fprintf(errorlog, "test number: %d\n", test_count);
+	fprintf(errorlog, "org: %d\n", result_org);
+	fprintf(errorlog, "ft: %d\n", result_ft);
+	fprintf(errorlog, "---------\n");
+	return (1);
 }
 
-int compare_length(int test_count, int ft_outcome, int outcome)
+int	comparefile(FILE *fptr1, FILE *fptr2, int *line, int *col)
 {
-    FILE 	*errorLog;
-    errorLog = fopen("logs/error_log.txt", "a");
-    if (errorLog == NULL)
-    {
-        printf("Error opening log file\n");
-        return 1;
-    }
-	if(ft_outcome != outcome)
+	char	ch1;
+	char	ch2;
+
+	ch1 = 0;
+	ch2 = 0;
+	*line = 1;
+	*col = 0;
+	while (ch1 != EOF && ch2 != EOF)
 	{
-        printf(RED "Length is not equal. Check error_log.txt\n" RESET);
-        fprintf(errorLog,"Length error\n");
-        fprintf(errorLog,"test: %d\n", test_count);
-        fprintf(errorLog,"ft_print len: %d\n", ft_outcome);
-        fprintf(errorLog,"print len: %d\n", outcome);
-        fprintf(errorLog,"---------\n");
+		ch1 = fgetc(fptr1);
+		ch2 = fgetc(fptr2);
+		if (ch1 == '\n')
+		{
+			*line += 1;
+			*col = 0;
+		}
+		if (ch1 != ch2)
+			return (-1);
+		*col += 1;
 	}
-    fclose(errorLog);
-	return(ft_outcome - outcome);
+	if (ch1 == EOF && ch2 == EOF)
+		return (0);
+	else
+		return (-1);
 }
 
-int compare_files(int test_count)
+int	compare_length(int test_count, int ft_outcome, int outcome)
 {
-	int diff;
-	int line, col;
-	char s;
-	FILE * fPtr1; 
-    FILE * fPtr2;
-	FILE 	*errorLog;
-	fPtr1 = fopen("ft_temp.txt", "r");
-    fPtr2 = fopen("temp.txt", "r");
-    errorLog = fopen("logs/error_log.txt", "a");
-    if (errorLog == NULL)
-    {
-        printf("Error opening log file\n");
-        return 1;
-    }
-	s = '0';
+	FILE	*errorlog;
 
-    /* fopen() return NULL if unable to open file in given mode. */
-    if (fPtr1 == NULL || fPtr2 == NULL)
-    {
-        /* Unable to open file hence exit */
-        printf("\nUnable to open file.\n");
-        printf("Please check whether file exists and you have read privilege.\n");
-        return(-1);
-    }
-    /* Call function to compare file */
-    diff = compareFile(fPtr1, fPtr2, &line, &col);
+	errorlog = fopen("logs/error_log.txt", "a");
+	if (errorlog == NULL)
+	{
+		printf("Error opening log file\n");
+		return (1);
+	}
+	if (ft_outcome != outcome)
+		log_int(test_count, errorlog, outcome, ft_outcome);
+	fclose(errorlog);
+	return (ft_outcome - outcome);
+}
 
-	rewind(fPtr1);
-	rewind(fPtr2);
-    if (diff != 0)
-    {
-        printf(RED "Files are not equal. Check error_log.txt\n" RESET);
-		fprintf(errorLog,"---------\n");
-		fprintf(errorLog,"File not equal error\n");
-		fprintf(errorLog,"test: %d\n", test_count);
-        fprintf(errorLog,"Line: %d, col: %d\n", line, col);
-		fprintf(errorLog,"ft_printf\n");
-		while((s=fgetc(fPtr1))!=EOF) 
-		{
-      		fprintf(errorLog,"%c",s);
-   		}
-		printf("\nprintf\n");
-		while((s=fgetc(fPtr2))!=EOF) 
-		{
-      		fprintf(errorLog,"%c",s);
-   		}
-		fprintf(errorLog,"\n");
-		fprintf(errorLog,"---------\n");
-    }
-    /* Finally close files to release resources */
-    fclose(fPtr1);
-    fclose(fPtr2);
-	fclose(errorLog);
-    return 0;
+int	compare_files(int test_count)
+{
+	int		line;
+	int		col;
+	FILE	*fptr1;
+	FILE	*fptr2;
+	FILE	*errorlog;
+
+	fptr1 = fopen("ft_temp.txt", "r");
+	fptr2 = fopen("temp.txt", "r");
+	errorlog = fopen("logs/error_log.txt", "a");
+	if (fptr1 == NULL || fptr2 == NULL || errorlog == NULL)
+	{
+		printf("Error opening log file\n");
+		return (1);
+	}
+	rewind(fptr1);
+	rewind(fptr2);
+	if (comparefile(fptr1, fptr2, &line, &col) != 0)
+		log_int(test_count, errorlog, line, col);
+	fclose(fptr1);
+	fclose(fptr2);
+	fclose(errorlog);
+	return (0);
 }
