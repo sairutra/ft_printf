@@ -15,7 +15,7 @@ OBJS = $(SRCS:.c=.o)
 NAME = ft_printftests.a
 
 NORMINETTE = norminette_tester.sh
-NORMDIR    = -d ../../src
+NORMDIR    = -d ../../
 NORM_NO_PR = -npi
 
 

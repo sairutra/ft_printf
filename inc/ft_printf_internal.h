@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_printf_internal.h                               :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/10/21 23:03:23 by spenning      #+#    #+#                 */
-/*   Updated: 2024/01/30 15:32:29 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_internal.h                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/21 23:03:23 by spenning          #+#    #+#             */
+/*   Updated: 2024/05/17 19:20:55 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,17 @@ int		ft_hexconvertptr(long unsigned int arg);
 int		putchar_fd(char c, int fd);
 // This function takes char *s and puts this string in fd file descriptor.
 int		putstr_fd(char *s, int fd);
-// This function takes d and puts this integer value as a string in fd file descriptor.
+// This function takes d and puts this integer value as a string in 
+// fd file descriptor.
 int		putnbr_fd(int d, int fd);
-// This function takes input and converts input to uppercase equivalent if input was lowercase.
-// Function returns conversion.
+// This function takes input and converts input to uppercase equivalent
+// if input was lowercase. Function returns conversion.
 int		tolower(int c);
-// This function takes input and converts input to lowercase equivalent if input was uppercase.
-// Function returns conversion.
+// This function takes input and converts input to lowercase equivalent 
+// if input was uppercase. Function returns conversion.
 int		toupper(int c);
 // This function takes pointer char *s, and expects a null terminated string.
 // then returns the length of the string.
 size_t	strlen(const char *s);
-
 
 #endif
