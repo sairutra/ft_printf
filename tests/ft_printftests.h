@@ -6,7 +6,7 @@
 /*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 23:03:23 by spenning          #+#    #+#             */
-/*   Updated: 2024/05/17 07:11:27 by mynodeus         ###   ########.fr       */
+/*   Updated: 2024/05/17 08:19:07 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
 //these inclusions are needed to be able to use the write function from
 // unistd library. and malloc and free from the stdlib library.
 
-# include <stdio.h>
 # include "../inc/ft_printf.h"
+# include <limits.h>
+# include <stdarg.h>
+# include <stdio.h>
 
 # define NORMFOLDER "../../ft_printf"
 # define NORMLOGS "logs/norminette_output.txt"
@@ -44,5 +46,6 @@ void	category_d(void);
 void	category_i(void);
 void	category_u(void);
 void	category_x(void);
-void	category_X(void);
+void	category_cx(void);
+int		test_util(int tc, char *format, ...);
 #endif

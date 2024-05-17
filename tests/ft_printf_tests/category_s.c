@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printftests.c                                   :+:      :+:    :+:   */
+/*   category_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 12:54:09 by spenning          #+#    #+#             */
-/*   Updated: 2024/05/17 08:17:55 by mynodeus         ###   ########.fr       */
+/*   Created: 2024/05/17 07:59:26 by mynodeus          #+#    #+#             */
+/*   Updated: 2024/05/17 08:11:25 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printftests.h"
-#include "../inc/ft_printf.h"
+#include "../ft_printftests.h"
 
-int	main(void)
+void	category_s(void)
 {
-	fclose(fopen("logs/error_log.txt", "w"));
-	category_c();
-	category_s();
-	category_p();
-	category_d();
-	category_i();
-	category_u();
-	category_x();
-	category_cx();
+	int	tc;
+
+	tc = 1;
+	printf(BMAG "%%s\n" RESET);
+	tc = test_util(tc, "lol %s", "lololol");
+	tc = test_util(tc, "lol %s", "\200");
+	tc = test_util(tc, "%s", "");
+	printf("\n");
+	remove("ft_temp.txt");
+	remove("temp.txt");
+	freopen("/dev/tty", "w", stdout);
 }

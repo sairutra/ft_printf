@@ -5,8 +5,10 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = ft_printf_tests.c ft_printftests_utils.c \
-		ft_printf_welcome.c
+SRCS =  ft_printftests_utils.c ft_printf_welcome.c ft_printf_tests/category_c.c \
+		ft_printf_tests/test_util.c ft_printf_tests/category_d.c ft_printf_tests/category_i.c \
+		ft_printf_tests/category_p.c ft_printf_tests/category_s.c ft_printf_tests/category_u.c \
+		ft_printf_tests/category_x.c ft_printf_tests/category_X.c 
 
 OBJS = $(SRCS:.c=.o)
 
@@ -55,7 +57,7 @@ $(LIB_DIR)/$(LIB_ARC):
 	@$(MAKE) -s -C $(LIB_DIR) all
 	
  %.o: %.c
-	$(CC) $(CFLAGS) -c $<  -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@$(MAKE) -s -C $(LIB_DIR) clean
