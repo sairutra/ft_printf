@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_printftests.c                                   :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: spenning <spenning@student.42.fr>            +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2023/12/19 12:54:09 by spenning      #+#    #+#                 */
-/*   Updated: 2024/01/30 15:20:37 by spenning      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_printftests.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mynodeus <mynodeus@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/19 12:54:09 by spenning          #+#    #+#             */
+/*   Updated: 2024/05/17 07:09:04 by mynodeus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printftests.h"
-# include "../inc/ft_printf.h"
+#include "../inc/ft_printf.h"
 
-int main ()
+int	main(void)
 {
 	fclose(fopen("logs/error_log.txt", "w"));
 	category_c();
